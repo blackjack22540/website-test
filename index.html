@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TOTO80</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    background: #050816;
+}
+
+
+/* =========================
+   BACKGROUND ANIMASI
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background:
+        linear-gradient(
+            125deg,
+            #050816,
+            #0b1635,
+            #111827,
+            #050816
+        );
+
+    background-size: 400% 400%;
+
+    animation: gradientMove 12s ease infinite;
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/* =========================
+   GLOW EFFECT
+========================= */
+
+.glow {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.22;
+
+    z-index: -2;
+
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+.glow1 {
+    background: #008cff;
+
+    top: -150px;
+    left: -150px;
+}
+
+.glow2 {
+    background: #7c3aed;
+
+    bottom: -200px;
+    right: -150px;
+
+    animation-delay: -4s;
+}
+
+
+@keyframes floatGlow {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(120px, 80px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+#particles {
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: 0.5;
+
+    animation: particleMove linear infinite;
+}
+
+
+@keyframes particleMove {
+
+    from {
+        transform:
+            translateY(110vh)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    to {
+        transform:
+            translateY(-10vh)
+            scale(1.5);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+    width: 100%;
+    max-width: 540px;
+
+    margin: 20px;
+
+    padding: 30px;
+
+    background:
+        rgba(10, 16, 30, 0.72);
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #a78bfa,
+            #38bdf8
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: shineText 4s linear infinite;
+}
+
+
+@keyframes shineText {
+
+    to {
+        background-position: 200% center;
+    }
+
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    margin-bottom: 28px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: #cbd5e1;
+}
+
+
+input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid #263447;
+
+    background:
+        rgba(4, 10, 20, 0.8);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+input:focus {
+
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 0 3px rgba(56,189,248,0.12),
+        0 0 20px rgba(56,189,248,0.12);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.generate {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.25);
+}
+
+
+.generate:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.01);
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,0.45);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+
+    display: none;
+
+    margin-top: 25px;
+
+    animation:
+        showResult 0.4s ease;
+}
+
+
+@keyframes showResult {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.result-title {
+
+    color: #94a3b8;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+}
+
+
+textarea {
+
+    width: 100%;
+
+    min-height: 200px;
+
+    resize: none;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid #263447;
+
+    background:
+        rgba(4,10,20,0.8);
+
+    color: #e2e8f0;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    outline: none;
+}
+
+
+.copy {
+
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.copy:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.1);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+    text-align: center;
+
+    min-height: 20px;
+
+    margin-top: 14px;
+
+    font-size: 13px;
+
+    color: #4ade80;
+}
+
+
+.hint {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+/* =========================
+   NEON BORDER CONTAINER
+========================= */
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+
+    position: absolute;
+    inset: -2px;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        transparent,
+        #38bdf8,
+        #7c3aed,
+        transparent,
+        transparent
+    );
+
+    animation: rotateBorder 6s linear infinite;
+
+    z-index: -1;
+}
+
+.container::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    background: rgba(10, 16, 30, 0.95);
+
+    border-radius: 24px;
+
+    z-index: -1;
+}
+
+
+@keyframes rotateBorder {
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   TITLE GLOW PULSE
+========================= */
+
+.title {
+
+    animation:
+        titleGlow 2.5s ease-in-out infinite,
+        shineText 4s linear infinite;
+}
+
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+
+        text-shadow:
+            0 0 5px rgba(56,189,248,0.3),
+            0 0 15px rgba(56,189,248,0.2);
+
+    }
+
+    50% {
+
+        text-shadow:
+            0 0 10px #38bdf8,
+            0 0 25px #2563eb,
+            0 0 45px rgba(124,58,237,0.8);
+
+    }
+
+}
+
+
+/* =========================
+   LIGHT RUNNING BUTTON
+========================= */
+
+.generate {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.generate::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    transform:
+        skewX(-25deg);
+
+    animation:
+        buttonShine 3s infinite;
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 150%;
+    }
+
+}
+
+
+/* =========================
+   RUNNING LIGHT LINE
+========================= */
+
+.container .light-line {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 10%;
+
+    width: 80%;
+
+    height: 2px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.05);
+}
+
+
+.container .light-line::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 100%;
+
+    left: -120px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #38bdf8,
+            #a855f7,
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px #38bdf8,
+        0 0 25px #a855f7;
+
+    animation:
+        runningLight 3s linear infinite;
+}
+
+
+@keyframes runningLight {
+
+    100% {
+        left: 100%;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background"></div>
+
+<div class="glow glow1"></div>
+
+<div class="glow glow2"></div>
+
+<div id="particles"></div>
+
+
+<!-- CONTAINER -->
+
+<div class="container">
+
+    <div class="title">
+        TOTO80
+    </div>
+
+
+    <div class="subtitle">
+
+        Masukkan ID Game lalu tekan ENTER
+
+    </div>
+
+
+    <label>ID Game</label>
+
+
+    <input
+        id="username"
+        type="text"
+        placeholder="Masukkan ID Game..."
+        autocomplete="off"
+        autofocus
+    >
+
+
+    <button
+        class="generate"
+        onclick="generateAccount()"
+    >
+
+        ⚡ GENERATE PASSWORD
+
+    </button>
+
+
+
+    <div
+        class="result"
+        id="result"
+    >
+
+
+        <div class="result-title">
+
+            Hasil untuk dikirim ke member:
+
+        </div>
+
+
+        <textarea
+            id="output"
+            readonly
+        ></textarea>
+
+
+        <button
+            class="copy"
+            onclick="copyResult()"
+        >
+
+            📋 COPY HASIL
+
+        </button>
+
+
+        <div
+            class="status"
+            id="status"
+        ></div>
+
+
+    </div>
+
+
+    <div class="hint">
+
+        Tekan ENTER → Generate → Otomatis Copy
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   JSON CONFIG
+========================= */
+
+const config = {
+
+    loginLink:
+        "https://toto80riin.site/",
+
+    message:
+        "Silahkan di coba login bossku..\nTerima kasih kak😊😊😊",
+
+    passwordWords: [
+
+        "Maju",
+        "Jaya",
+        "Bintang",
+        "Mantap",
+        "Sukses",
+        "Hebat",
+        "Juara",
+        "Lucky",
+        "Winner",
+        "Bonus",
+        "Raja",
+        "King",
+        "Gacor",
+        "Prima",
+        "Top"
+
+    ]
+
+};
+
+
+/* =========================
+   ELEMENT
+========================= */
+
+const usernameInput =
+    document.getElementById("username");
+
+const result =
+    document.getElementById("result");
+
+const output =
+    document.getElementById("output");
+
+const status =
+    document.getElementById("status");
+
+
+/* =========================
+   PASSWORD GENERATOR
+========================= */
+
+function generatePassword() {
+
+    const word =
+
+        config.passwordWords[
+            Math.floor(
+                Math.random() *
+                config.passwordWords.length
+            )
+        ];
+
+
+    const number =
+
+        Math.floor(
+            100 +
+            Math.random() * 900
+        );
+
+
+    return word + number;
+
+}
+
+
+/* =========================
+   GENERATE ACCOUNT
+========================= */
+
+function generateAccount() {
+
+    const username =
+        usernameInput.value.trim();
+
+
+    if (!username) {
+
+        usernameInput.focus();
+
+        showStatus(
+            "⚠️ Masukkan ID Game terlebih dahulu.",
+            true
+        );
+
+        return;
+
+    }
+
+
+    const password =
+        generatePassword();
+
+
+    const message =
+
+`ID Game : ${username}
+Password : ${password}
+
+Link Login : ${config.loginLink}
+
+${config.message}`;
+
+
+    output.value =
+        message;
+
+
+    result.style.display =
+        "block";
+
+
+    copyToClipboard(
+        message
+    );
+
+
+    showStatus(
+        "✓ Hasil otomatis tersalin ke clipboard"
+    );
+
+
+    usernameInput.select();
+
+}
+
+
+/* =========================
+   COPY
+========================= */
+
+async function copyToClipboard(text) {
+
+    try {
+
+        await navigator.clipboard.writeText(text);
+
+    }
+
+    catch (error) {
+
+        const textarea =
+            document.createElement("textarea");
+
+
+        textarea.value =
+            text;
+
+
+        document.body.appendChild(
+            textarea
+        );
+
+
+        textarea.select();
+
+
+        document.execCommand(
+            "copy"
+        );
+
+
+        textarea.remove();
+
+    }
+
+}
+
+
+/* =========================
+   COPY BUTTON
+========================= */
+
+function copyResult() {
+
+    if (!output.value)
+        return;
+
+
+    copyToClipboard(
+        output.value
+    );
+
+
+    showStatus(
+        "✓ Berhasil disalin"
+    );
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+function showStatus(
+    message,
+    error = false
+) {
+
+    status.textContent =
+        message;
+
+
+    status.style.color =
+
+        error
+        ? "#f87171"
+        : "#4ade80";
+
+
+    setTimeout(
+        () => {
+
+            status.textContent =
+                "";
+
+        },
+
+        3000
+    );
+
+}
+
+
+/* =========================
+   ENTER
+========================= */
+
+usernameInput.addEventListener(
+
+    "keydown",
+
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            event.preventDefault();
+
+            generateAccount();
+
+        }
+
+    }
+
+);
+
+
+/* =========================
+   PARTICLE GENERATOR
+========================= */
+
+const particles =
+    document.getElementById(
+        "particles"
+    );
+
+
+const totalParticles =
+    45;
+
+
+for (
+    let i = 0;
+    i < totalParticles;
+    i++
+) {
+
+    const particle =
+        document.createElement(
+            "div"
+        );
+
+
+    particle.className =
+        "particle";
+
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+
+    particle.style.animationDuration =
+
+        6 +
+        Math.random() * 10 +
+        "s";
+
+
+    particle.style.animationDelay =
+
+        Math.random() * -10 +
+        "s";
+
+
+    const size =
+
+        2 +
+        Math.random() * 4;
+
+
+    particle.style.width =
+        size + "px";
+
+
+    particle.style.height =
+        size + "px";
+
+
+    particles.appendChild(
+        particle
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
